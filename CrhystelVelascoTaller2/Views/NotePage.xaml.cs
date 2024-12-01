@@ -6,8 +6,10 @@ public partial class NotePage : ContentPage
     public NotePage()
 	{
 		InitializeComponent();
-        if (File.Exists(_fileName))
-            TextEditor.Text = File.ReadAllText(_fileName);
+        string appDataPath = FileSystem.AppDataDirectory;
+        string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
+
+        LoadNote(Path.Combine(appDataPath, randomFileName));
     }
     private void SaveButton_Clicked(object sender, EventArgs e)
     {
@@ -22,5 +24,18 @@ public partial class NotePage : ContentPage
             File.Delete(_fileName);
 
         TextEditor.Text = string.Empty;
+    }
+    private void LoadNote(string fileName)
+    {
+        Models.Note noteModel = new Models.Note();
+        noteModel.Filename = fileName;
+
+        if (File.Exists(fileName))
+        {
+            noteModel.Date = File.GetCreationTime(fileName);
+            noteModel.Text = File.ReadAllText(fileName);
+        }
+
+        BindingContext = noteModel;
     }
 }
