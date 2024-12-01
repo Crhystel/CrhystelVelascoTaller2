@@ -24,15 +24,17 @@
     <FlyoutItem Title="Pagina de prueba">
         <Tab Title="Notas" Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}">
             <ShellContent
-                Title="Notas"
-                ContentTemplate="{DataTemplate views:AllNotes}" />
+        Title="Notas"
+        ContentTemplate="{DataTemplate views:AllNotes}" />
         </Tab>
+
         <Tab Title="Acerca de" Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}">
             <ShellContent
                 Title="Acerca de"
                 ContentTemplate="{DataTemplate views:AboutPage}" />
 
         </Tab>
+        
 
     </FlyoutItem>
 
