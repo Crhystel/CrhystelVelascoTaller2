@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrhystelVelascoTaller2.Views.AboutPage"
              xmlns:models="clr-namespace:CrhystelVelascoTaller2.Models"
-             Title="AboutPage">
+             Title="Crhystel Velasco">
     <ContentPage.BindingContext>
         <models:About />
     </ContentPage.BindingContext>
