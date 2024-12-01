@@ -11,7 +11,7 @@
     <ScrollView>
         <VerticalStackLayout Spacing="10" Margin="10">
             <HorizontalStackLayout Spacing="10">
-                <Label Text="Representación gráfica de mi persona en estos momentos:" />
+                <Label Text="Representación gráfica de Crhystel en estos momentos:" />
                 <Image Source="imagen.png"
                        HeightRequest="100" />
             </HorizontalStackLayout>
