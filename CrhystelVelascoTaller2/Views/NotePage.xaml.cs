@@ -1,4 +1,4 @@
-namespace CrhystelVelascoTaller2;
+namespace CrhystelVelascoTaller2.Views;
 
 public partial class NotePage : ContentPage
 {
