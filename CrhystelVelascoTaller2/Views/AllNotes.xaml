@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:CrhystelVelascoTaller2.ViewModels"
              x:Class="CrhystelVelascoTaller2.Views.AllNotes"
-             Title="Crhystel Velasco">
+             Title="Crhystel Velasco"
+             NavigatedTo="ContentPage_NavigatedTo"
+             BackgroundColor="LightPink">
     <ContentPage.BindingContext>
         <viewModels:NotesViewModel />
     </ContentPage.BindingContext>
@@ -13,10 +15,11 @@
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="notesCollection"
-                        ItemsSource="{Binding AllNotes}"
-                        Margin="20"
-                        SelectionChangedCommand="{Binding SelectNoteCommand}"
-                        SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+                ItemsSource="{Binding AllNotes}"
+                Margin="20"
+                SelectionMode="Single"
+                SelectionChangedCommand="{Binding SelectNoteCommand}"
+                SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
 
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />

@@ -10,37 +10,14 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="10" Margin="10">
+            <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Representación gráfica de Crhystel en estos momentos:" />
                 <Image Source="imagen.png"
                        HeightRequest="100" />
             </HorizontalStackLayout>
-            <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
 
-            <Label Text="La verda no sé que decir de mi, entonces ahi fueron los memes que más me gustaron de la semana" />
-
-            <HorizontalStackLayout Spacing="10">
-                <Image
-                    Source="meme1.jpeg"
-                    HeightRequest="300" />
-                <Image
-                    Source="meme2.jpeg"
-                    HeightRequest="300" />
-                <Image
-                    Source="meme3.jpeg"
-                    HeightRequest="300" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="10">
-                <Image
-                    Source="meme4.jpeg"
-                    HeightRequest="300" />
-                <Image
-                    Source="meme5.jpeg"
-                    HeightRequest="300" />
-                <Image
-                    Source="meme6.jpeg"
-                    HeightRequest="300" />
-            </HorizontalStackLayout>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
