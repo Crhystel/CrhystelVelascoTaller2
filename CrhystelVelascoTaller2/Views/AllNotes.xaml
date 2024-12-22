@@ -5,13 +5,14 @@
              x:Class="CrhystelVelascoTaller2.Views.AllNotes"
              Title="Crhystel Velasco"
              NavigatedTo="ContentPage_NavigatedTo"
-             BackgroundColor="LightPink">
+             BackgroundColor="LightPink"
+             >
     <ContentPage.BindingContext>
-        <viewModels:NotesViewModel />
+        <viewModels:CVelascoNotesViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}" />
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=HotPink, Size=22}" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="notesCollection"
@@ -28,8 +29,8 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
-                    <Label Text="{Binding Text}" FontSize="22"/>
-                    <Label Text="{Binding Date}" FontSize="14" TextColor="Silver"/>
+                    <Label Text="{Binding Text}" FontSize="22" TextColor="Black"/>
+                    <Label Text="{Binding Date}" FontSize="14" TextColor="Black"/>
                 </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>

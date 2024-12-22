@@ -3,17 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrhystelVelascoTaller2.Views.AboutPage"
              xmlns:viewmodels="clr-namespace:CrhystelVelascoTaller2.ViewModels"
-             Title="Crhystel Velasco">
+             Title="Crhystel Velasco"
+             BackgroundColor="LightPink">
     <ContentPage.BindingContext>
-        <viewmodels:AboutViewModel />
+        <viewmodels:CVelascoAboutViewModel />
     </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout Spacing="10" Margin="10">
-            <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
+            <Button Text="Botoncito con enlace" Command="{Binding ShowMoreInfoCommand}"
+                    BackgroundColor="Black"
+                    TextColor="White"/>
             <HorizontalStackLayout Spacing="10">
-                <Label Text="Representación gráfica de Crhystel en estos momentos:" />
-                <Image Source="imagen.png"
+                <Label Text="Representación gráfica de Crhystel en estos momentos:" TextColor="Black"/>
+                <Image Source="cosorro.jpg"
                        HeightRequest="100" />
             </HorizontalStackLayout>
 

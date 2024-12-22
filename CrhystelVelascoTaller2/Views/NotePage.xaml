@@ -6,20 +6,25 @@
              Title="Crhystel Velasco"
              BackgroundColor="LightPink">
     <ContentPage.BindingContext>
-        <viewModels:NoteViewModel />
+        <viewModels:CVelascoNoteViewModel />
     </ContentPage.BindingContext>
     <VerticalStackLayout Spacing="10" Margin="5">
         <Editor x:Name="TextEditor"
                 Placeholder="Enter your note"
                 Text="{Binding Text}"
+                TextColor="Black"
                 HeightRequest="100" />
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
             <Button Text="Save"
+                    TextColor="White"
+                    BackgroundColor="Black"
                    Command="{Binding SaveCommand}"/>
 
             <Button Grid.Column="1"
                     Text="Delete"
+                    TextColor="White"
+                    BackgroundColor="Black"
                     Command="{Binding DeleteCommand}"/>
         </Grid>
     </VerticalStackLayout>

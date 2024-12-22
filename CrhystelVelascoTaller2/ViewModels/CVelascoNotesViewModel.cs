@@ -9,23 +9,23 @@ using System.Windows.Input;
 
 namespace CrhystelVelascoTaller2.ViewModels
 {
-    internal class NotesViewModel:IQueryAttributable
+    internal class CVelascoNotesViewModel:IQueryAttributable
     {
-        public ObservableCollection<ViewModels.NoteViewModel> AllNotes { get; }
+        public ObservableCollection<ViewModels.CVelascoNoteViewModel> AllNotes { get; }
         public ICommand NewCommand { get; }
         public ICommand SelectNoteCommand { get; }
-        public NotesViewModel()
+        public CVelascoNotesViewModel()
         {
-            AllNotes = new ObservableCollection<ViewModels.NoteViewModel>(Models.Note.LoadAll().Select(n => new NoteViewModel(n)));
+            AllNotes = new ObservableCollection<ViewModels.CVelascoNoteViewModel>(Models.Note.LoadAll().Select(n => new CVelascoNoteViewModel(n)));
             NewCommand = new AsyncRelayCommand(NewNoteAsync);
-            SelectNoteCommand = new AsyncRelayCommand<ViewModels.NoteViewModel>(SelectNoteAsync);
+            SelectNoteCommand = new AsyncRelayCommand<ViewModels.CVelascoNoteViewModel>(SelectNoteAsync);
         }
         private async Task NewNoteAsync()
         {
             await Shell.Current.GoToAsync(nameof(Views.NotePage));
         }
 
-        private async Task SelectNoteAsync(ViewModels.NoteViewModel note)
+        private async Task SelectNoteAsync(ViewModels.CVelascoNoteViewModel note)
         {
             if (note != null)
                 await Shell.Current.GoToAsync($"{nameof(Views.NotePage)}?load={note.Identifier}");
@@ -35,7 +35,7 @@ namespace CrhystelVelascoTaller2.ViewModels
             if (query.ContainsKey("deleted"))
             {
                 string noteId = query["deleted"].ToString();
-                NoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
+                CVelascoNoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
 
                 // If note exists, delete it
                 if (matchedNote != null)
@@ -44,7 +44,7 @@ namespace CrhystelVelascoTaller2.ViewModels
             else if (query.ContainsKey("saved"))
             {
                 string noteId = query["saved"].ToString();
-                NoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
+                CVelascoNoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
 
                 // If note is found, update it
                 if (matchedNote != null)
@@ -56,7 +56,7 @@ namespace CrhystelVelascoTaller2.ViewModels
 
                 // If note isn't found, it's new; add it.
                 else
-                    AllNotes.Insert(0, new NoteViewModel(Models.Note.Load(noteId)));
+                    AllNotes.Insert(0, new CVelascoNoteViewModel(Models.Note.Load(noteId)));
             }
         }
     }

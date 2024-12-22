@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace CrhystelVelascoTaller2.ViewModels
 {
-    internal class NoteViewModel : ObservableObject, IQueryAttributable
+    internal class CVelascoNoteViewModel : ObservableObject, IQueryAttributable
     {
         private Models.Note _note;
         public string Text
@@ -28,14 +28,14 @@ namespace CrhystelVelascoTaller2.ViewModels
         public DateTime Date => _note.Date;
 
         public string Identifier => _note.Filename;
-        public NoteViewModel()
+        public CVelascoNoteViewModel()
         {
             _note = new Models.Note();
             SaveCommand = new AsyncRelayCommand(Save);
             DeleteCommand = new AsyncRelayCommand(Delete);
         }
 
-        public NoteViewModel(Models.Note note)
+        public CVelascoNoteViewModel(Models.Note note)
         {
             _note = note;
             SaveCommand = new AsyncRelayCommand(Save);
