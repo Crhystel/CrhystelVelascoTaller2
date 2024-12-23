@@ -10,17 +10,30 @@
     </ContentPage.BindingContext>
 
     <ScrollView>
-        <VerticalStackLayout Spacing="10" Margin="10">
+        <VerticalStackLayout Spacing="10" Margin="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Button Text="Botoncito con enlace" Command="{Binding ShowMoreInfoCommand}"
                     BackgroundColor="Black"
-                    TextColor="White"/>
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Representación gráfica de Crhystel en estos momentos:" TextColor="Black"/>
-                <Image Source="cosorro.jpg"
-                       HeightRequest="100" />
-            </HorizontalStackLayout>
+                    TextColor="White"
+                    HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-            
+                <Label Text="Representación gráfica de Crhystel en estos momentos:" 
+                       Grid.Row="0" Grid.Column="0" 
+                       TextColor="Black" 
+                       VerticalTextAlignment="Center"/>
+                <Image Source="cosorro.jpg" 
+                       Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Aspect="AspectFit" 
+                       HeightRequest="100"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
